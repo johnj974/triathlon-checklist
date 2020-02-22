@@ -1,3 +1,55 @@
 body{
     background-color: orangered;
+    margin: 0;
+    padding: 0;
+}
+
+#races{
+    background-color: blue;
+    height: 50vh;
+}
+
+#disciplines{
+    background-color: green;
+    height: 50vh;
+}
+
+#checklist{
+    background-color: yellow;
+    height: 50vh;
+}
+
+ul{
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul li{
+    display: inline;
+    font-size: 120%;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+ul li i{
+    color:  #f2ebeb;
+    transition: color 0.5s ease-in-out;
+}
+
+ul li i:hover{
+    color: green;
+}
+
+.navbar .nav-item .nav-link{
+    color:#f2ebeb;
+    text-align: right;
+}
+
+.navbar .nav-item .nav-link:hover{
+    color: green;
+    transition: color 0.5s ease-in-out;
+}
+
+.navbar .navbar-toggler icon{
+    color:#f2ebeb;
 }

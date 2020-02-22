@@ -7,17 +7,19 @@ from os import path
 if path.exists("env.py"):
     import env
 
-MONGO_URI = os.environ.get("tridata")
+MONGO_URI = os.environ.get("tridata")                                                               #environmental variable
 
 app = Flask(__name__)
 
 app.config["MONGO_DBNAME"] = "triathlon_checklist"
 app.config["MONGO_URI"] = MONGO_URI
 
+mongo = PyMongo(app)
+
 @app.route("/")
 @app.route("/index")
-def hello():
-    return render_template("base.html")
+def index():
+    return render_template("index2.html", check=mongo.db.checklist.find())                            # check is assigned variable/ checklist is mongodb doc heading
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

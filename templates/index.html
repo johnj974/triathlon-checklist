@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Triathlon Checklist</title>
-    
-</head>
-<body>
-    <h1>Coding is Hell</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<h1> war is hell, coding is war </h1>
+{% for item in check %}
+<h2>{{ item.discipline_name }}</h2>
+<p>{{ item.item1 }}</p>
+<p>{{ item.item2 }}</p>
+<p>{{ item.item3 }}</p>
+<p>{{ item.item4 }}</p>
+<p>{{ item.item5 }}</p>
+<p>{{ item.item6 }}</p>
+<p>{{ item.item7 }}</p>
+{% endfor %}
+{% endblock %}
