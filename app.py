@@ -17,9 +17,25 @@ app.config["MONGO_URI"] = MONGO_URI
 mongo = PyMongo(app)
 
 @app.route("/")
-@app.route("/index")
+@app.route("/home")
 def index():
-    return render_template("index2.html", check=mongo.db.checklist.find())                            # check is assigned variable/ checklist is mongodb doc heading
+    return render_template("home.html", check=mongo.db.checklist.find())                            # check is assigned variable/ checklist is mongodb doc heading
+
+@app.route("/add_list")
+def add_list():
+    return render_template("list.html", check=mongo.db.checklist.find())
+
+@app.route("/complete_list")
+def complete_list():
+    return render_template("index.html", check=mongo.db.checklist.find())
+
+@app.route('/insert_task', methods=['POST'])
+def insert_task():
+    checklists = mongo.db.checklist
+    checklists.insert_one(request.form.to_dict())
+    return redirect(url_for('home'))
+
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

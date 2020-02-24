@@ -3,6 +3,24 @@
 <div class="container-fluid">
 	<div class="row">
 		<div id="checklist" class="col">
+        <div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+        {% for item in check %}
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            {{ item.discipline_name }}
+            </button>
+        </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body"><p>{{ item.item1 }}</p><p>{{ item.item2 }}</p>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
 		</div>
 	</div>
 	<div class="row">

@@ -53,3 +53,23 @@ ul li i:hover{
 .navbar .navbar-toggler icon{
     color:#f2ebeb;
 }
+
+#selector{
+    height: 80vh;
+    background-color: goldenrod;
+}
+
+#swim{
+    background-color: red;
+    height: 70vh;
+}
+
+#cycle{
+    background-color: blue;
+    height: 70vh;
+}
+
+#run{
+    background-color: gold;
+    height: 70vh;
+}
