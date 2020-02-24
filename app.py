@@ -23,17 +23,17 @@ def index():
 
 @app.route("/add_list")
 def add_list():
-    return render_template("list.html", check=mongo.db.checklist.find())
+    return render_template("list.html", disciplines=mongo.db.disciplines.find())
 
 @app.route("/complete_list")
 def complete_list():
     return render_template("index.html", check=mongo.db.checklist.find())
 
-@app.route('/insert_task', methods=['POST'])
-def insert_task():
-    checklists = mongo.db.checklist
-    checklists.insert_one(request.form.to_dict())
-    return redirect(url_for('home'))
+@app.route('/insert_list', methods=['POST'])                                                        # function to generate new list to home page/maybe change url to index
+def insert_list():
+    checklist = mongo.db.checklist
+    checklist.insert_one(request.form.to_dict())
+    return redirect(url_for('index'))
 
 
 
