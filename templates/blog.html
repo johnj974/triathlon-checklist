@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 <h1> war is hell, coding is war </h1>
+<div>
+    <form method="POST">
+        <textarea name="content"></textarea>
+        <input type="submit"/>
+    </form>
+    
+</div>
+
+
+
+{% endblock %}
+
 {% for item in check %}
 <h2>{{ item.discipline_name }}</h2>
 <p>{{ item.item1 }}</p>
@@ -11,4 +23,3 @@
 <p>{{ item.item6 }}</p>
 <p>{{ item.item7 }}</p>
 {% endfor %}
-{% endblock %}

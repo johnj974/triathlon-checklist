@@ -12,7 +12,7 @@
                                 {{ item.discipline_name }}
                             </button>
                             <a href="{{url_for('edit_checklist', checklist_id=item._id)}}"><button type="button" class="btn btn-success">Edit</button></a>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <a href="{{url_for('delete_checklist', checklist_id=item._id)}}"><button type="button" class="btn btn-danger">Delete</button></a>
 						</h2>
 					</div>
     
@@ -35,6 +35,10 @@
 	</div>
 	<div class="row">
 		<div id="races" class="col-md-6">
+            <h3> 2020 Upcoming Events</h3>
+                {% for event in events %}
+                    <p>Event Type: {{event.discipline_type}} Location: {{event.location}} Date: {{event.date}}</p>
+                {% endfor %}
 		</div>
 		<div id="disciplines" class="col-md-6">
 			<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
