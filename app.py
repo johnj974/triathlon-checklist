@@ -35,6 +35,13 @@ def insert_list():
     checklist.insert_one(request.form.to_dict())
     return redirect(url_for('index'))
 
+@app.route('/edit_checklist/<checklist_id>')
+def edit_checklist(checklist_id):
+    the_checklist =  mongo.db.checklist.find_one({"_id": ObjectId(checklist_id)})
+    all_disciplines =  mongo.db.disciplines.find()
+    return render_template('editlist.html', checklist=the_checklist,
+                           disciplines=all_disciplines)
+
 
 
 if __name__ == "__main__":
