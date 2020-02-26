@@ -23,14 +23,17 @@ def index():
                                          events=mongo.db.events.find())   
                                                                     
 
-@app.route("/add_list")
+@app.route("/add_list")                                                                             # page for checklist addition
 def add_list():
     return render_template("list.html", disciplines=mongo.db.disciplines.find())
 
 
-@app.route("/blog_list")
+@app.route("/blog_list")                                                                            # page for blog
 def blog_list():
-    return render_template("blog.html", events=mongo.db.events.find())
+    return render_template("blog.html", entries=mongo.db.blog.find())
+
+
+@app.route("/insert_blog")                                                                          # function to generate new blog
 
 
 @app.route("/insert_list", methods=["POST"])                                                        # function to generate new list to home page/maybe change url to index
@@ -40,7 +43,7 @@ def insert_list():
     return redirect(url_for("index"))
 
 
-@app.route("/edit_checklist/<checklist_id>")
+@app.route("/edit_checklist/<checklist_id>")                                                        # function to edit checklist
 def edit_checklist(checklist_id):
     the_checklist =  mongo.db.checklist.find_one({"_id": ObjectId(checklist_id)})
     all_disciplines =  mongo.db.disciplines.find()
@@ -78,11 +81,6 @@ def blog():
     events.insert_one(request.form.to_dict())
     return redirect(url_for("blog_list"))
 
-"""@app.route("/insert_list", methods=["POST"])                                                        # function to generate new list to home page/maybe change url to index
-def insert_list():
-    checklist = mongo.db.checklist                                                                        test code
-    checklist.insert_one(request.form.to_dict())
-    return redirect(url_for("index"))"""
 
 
 if __name__ == "__main__":
