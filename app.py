@@ -33,7 +33,12 @@ def blog_list():
     return render_template("blog.html", entries=mongo.db.blog.find())
 
 
-@app.route("/insert_blog")                                                                          # function to generate new blog
+@app.route("/insert_blog", methods=["POST"])                                                        # function to generate new blog
+def insert_blog():
+    blog = mongo.db.blog 
+    blog.insert_one(request.form.to_dict())
+    return redirect(url_for("blog_list"))
+
 
 
 @app.route("/insert_list", methods=["POST"])                                                        # function to generate new list to home page/maybe change url to index
