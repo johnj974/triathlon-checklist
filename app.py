@@ -16,16 +16,19 @@ app.config["MONGO_URI"] = MONGO_URI
 
 mongo = PyMongo(app)
 
-@app.route("/")
+@app.route("/")                                                                                     # home page
 @app.route("/home")
 def index():
     return render_template("home.html", check=mongo.db.checklist.find(),                            # check is assigned variable/ checklist is mongodb doc heading
-                                         events=mongo.db.events.find())   
-                                                                    
+                                        events=mongo.db.events.find(),                              # events is assigned variable to mongodb heading
+                                        types=mongo.db.types.find())
+                            
 
 @app.route("/add_list")                                                                             # page for checklist addition
 def add_list():
-    return render_template("list.html", disciplines=mongo.db.disciplines.find())
+    return render_template("list.html", disciplines=mongo.db.disciplines.find(),
+                                        events=mongo.db.events.find(),
+                                        types=mongo.db.types.find())
 
 
 @app.route("/blog_list")                                                                            # page for blog
@@ -41,10 +44,17 @@ def insert_blog():
 
 
 
-@app.route("/insert_list", methods=["POST"])                                                        # function to generate new list to home page/maybe change url to index
+@app.route("/insert_list", methods=["POST"])                                                        # function to generate new checklist to home page
 def insert_list():
     checklist = mongo.db.checklist
     checklist.insert_one(request.form.to_dict())
+    return redirect(url_for("index"))
+
+
+@app.route("/event_list", methods=["POST"])                                                        # function to generate new event list to home page
+def event_list():
+    types = mongo.db.types
+    types.insert_one(request.form.to_dict())
     return redirect(url_for("index"))
 
 
@@ -80,11 +90,11 @@ def delete_checklist(checklist_id):
     return redirect(url_for("index"))
 
 
-@app.route("/blog", methods=["POST"])                                                # blog function
+"""@app.route("/blog", methods=["POST"])                                                # blog function
 def blog():
     events = mongo.db.events
     events.insert_one(request.form.to_dict())
-    return redirect(url_for("blog_list"))
+    return redirect(url_for("blog_list"))"""
 
 
 
