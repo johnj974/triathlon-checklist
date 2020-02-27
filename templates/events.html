@@ -1,9 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<div id="races" class="col-md-6">
-            <h3> 2020 Upcoming Events</h3>
-                {% for type in events %}
-                    <p>Event Type: {{type.discipline_type}} Location: {{type.location}} Date: {{type.date}}</p>
-                {% endfor %}
-		</div>
+<div id="races" class="col">
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Date</th>
+				<th scope="col">Name</th>
+				<th scope="col">Event Type</th>
+				<th scope="col">Location</th>
+			</tr>
+		</thead>
+		{% for type in events %}
+		<tbody>
+			<tr>
+				<th>{{type.date}}</th>
+				<td>{{type.name}}</td>
+				<td>{{type.discipline_type}}</td>
+				<td>{{type.location}}</td>
+			</tr>
+		</tbody>
+		{% endfor %}
+	</table>
+</div>
+
 {% endblock %}
