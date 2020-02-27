@@ -1,17 +1,15 @@
 body{
-    background-color: orangered;
+    background-color: seashell;
     margin: 0;
     padding: 0;
 }
 
 #races{
-    background-color: lightblue;
     height: 50vh;
 }
 
 
 #checklist{
-    background-color: yellow;
     height: 50vh;
 }
 
@@ -28,7 +26,7 @@ ul li{
 }
 
 ul li i{
-    color:  #f2ebeb;
+    color:  red;
     transition: color 0.5s ease-in-out;
 }
 
@@ -37,7 +35,7 @@ ul li i:hover{
 }
 
 .navbar .nav-item .nav-link{
-    color:#f2ebeb;
+    color:red;
     text-align: right;
 }
 
@@ -47,26 +45,24 @@ ul li i:hover{
 }
 
 .navbar .navbar-toggler icon{
-    color:#f2ebeb;
+    color:red;
 }
 
 #selector{
     height: 80vh;
-    background-color: goldenrod;
+    background-color: seashell;
 }
 
 #swim{
-    background-color: red;
+    background-color:slategray;
     height: 70vh;
 }
 
 #cycle{
-    background-color: blue;
     height: 70vh;
 }
 
 #run{
-    background-color: gold;
     height: 70vh;
 }
 

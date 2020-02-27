@@ -20,8 +20,8 @@ mongo = PyMongo(app)
 @app.route("/home")
 def index():
     return render_template("home.html", check=mongo.db.checklist.find(),                            # check is assigned variable/ checklist is mongodb doc heading
-                                        events=mongo.db.events.find(),                              # events is assigned variable to mongodb heading
-                                        types=mongo.db.types.find())
+                                        types=mongo.db.types.find())                                # events is assigned variable to mongodb heading
+                                       
                                         
 
 @app.route("/add_list")                                                                             # page for checklist addition
@@ -51,11 +51,17 @@ def insert_list():
     return redirect(url_for("index"))
 
 
-@app.route("/event_list", methods=["POST"])                                                        # function to generate new event list to home page
+@app.route("/event_list")                                                                            # page for events list
 def event_list():
-    types = mongo.db.types
-    types.insert_one(request.form.to_dict())
-    return redirect(url_for("index"))
+    return render_template("events.html", events=mongo.db.events.find())
+
+
+
+@app.route("/insert_event", methods=["POST"])                                                        # function to generate new event list to event page
+def insert_event():
+    events = mongo.db.events
+    events.insert_one(request.form.to_dict())
+    return redirect(url_for("event_list"))
 
 
 @app.route("/edit_checklist/<checklist_id>")                                                        # function to edit checklist
@@ -67,7 +73,7 @@ def edit_checklist(checklist_id):
 
 
 
-@app.route('/update_list/<checklist_id>', methods=["POST"])
+@app.route('/update_list/<checklist_id>', methods=["POST"])                                        
 def update_list(checklist_id):
     checklist = mongo.db.checklist
     checklist.update({'_id': ObjectId(checklist_id)},
@@ -90,13 +96,6 @@ def delete_checklist(checklist_id):
     return redirect(url_for("index"))
 
 
-"""@app.route("/blog", methods=["POST"])                                                # blog function
-def blog():
-    events = mongo.db.events
-    events.insert_one(request.form.to_dict())
-    return redirect(url_for("blog_list"))"""
-
-
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
@@ -104,6 +103,3 @@ if __name__ == "__main__":
     debug=True)
 
 
-Pokemons = ["Pikachu", "Charizard", "Squirtle", "Jigglypuff",  
-           "Bulbasaur", "Gengar", "Charmander", "Mew", "Lugia", "Gyarados"] 
-  
