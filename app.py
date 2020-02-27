@@ -22,7 +22,7 @@ def index():
     return render_template("home.html", check=mongo.db.checklist.find(),                            # check is assigned variable/ checklist is mongodb doc heading
                                         events=mongo.db.events.find(),                              # events is assigned variable to mongodb heading
                                         types=mongo.db.types.find())
-                            
+                                        
 
 @app.route("/add_list")                                                                             # page for checklist addition
 def add_list():
@@ -102,3 +102,8 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
     port=int(os.environ.get("PORT")),
     debug=True)
+
+
+Pokemons = ["Pikachu", "Charizard", "Squirtle", "Jigglypuff",  
+           "Bulbasaur", "Gengar", "Charmander", "Mew", "Lugia", "Gyarados"] 
+  
