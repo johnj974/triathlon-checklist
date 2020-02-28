@@ -22,7 +22,7 @@
 				<td>{{type.discipline_type}}</td>
 				<td>{{type.location}}</td>
                 <td><button type="button" class="btn btn-outline-success">Success</button></td>
-                <td><button type="button" class="btn btn-outline-secondary">Secondary</button></td>
+                <td><a href="{{url_for('edit_eventlist', events_id=type._id)}}"><button type="button" class="btn btn-outline-secondary">Secondary</button></a></td>
                 <td><a href="{{url_for('delete_events', events_id=type._id)}}"><button type="button" class="btn btn-outline-danger">Danger</button></a></td>
 			</tr>
 		</tbody>

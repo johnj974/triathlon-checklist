@@ -47,7 +47,7 @@ def edit_checklist(checklist_id):
                            disciplines=all_disciplines)
 
 
-@app.route('/update_list/<checklist_id>', methods=["POST"])                                         # update path to update checklist 
+@app.route('/update_list/<checklist_id>', methods=["POST"])                                         # update path to update checklist/populate editlist 
 def update_list(checklist_id):
     checklist = mongo.db.checklist
     checklist.update({'_id': ObjectId(checklist_id)},
@@ -100,6 +100,14 @@ def insert_event():
 def delete_events(events_id):
     mongo.db.events.remove({"_id": ObjectId(events_id)})
     return redirect(url_for("event_list"))
+
+@app.route("/edit_eventlist/<events_id>")                                                            # function to edit event list
+def edit_eventlist(events_id):
+    the_eventlist =  mongo.db.events.find_one({"_id": ObjectId(events_id)})
+    all_types =  mongo.db.types.find()
+    return render_template("editeventlist.html", events=the_eventlist,
+                           types=all_types)
+
 
 
 
