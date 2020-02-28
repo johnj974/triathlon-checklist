@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="races" class="col">
+    <form action="" method="POST">
 	<table class="table">
 		<thead>
 			<tr>
-				<th scope="col">Date</th>
+				<th scope="col">Date y-m-d</th>
 				<th scope="col">Name</th>
 				<th scope="col">Event Type</th>
 				<th scope="col">Location</th>
+                <th scope="col">Enter</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
 			</tr>
 		</thead>
 		{% for type in events %}
@@ -17,10 +21,14 @@
 				<td>{{type.name}}</td>
 				<td>{{type.discipline_type}}</td>
 				<td>{{type.location}}</td>
+                <td><button type="button" class="btn btn-outline-success">Success</button></td>
+                <td><button type="button" class="btn btn-outline-secondary">Secondary</button></td>
+                <td><a href="{{url_for('delete_events', events_id=type._id)}}"><button type="button" class="btn btn-outline-danger">Danger</button></a></td>
 			</tr>
 		</tbody>
 		{% endfor %}
 	</table>
+    </form>
 </div>
 
 {% endblock %}
