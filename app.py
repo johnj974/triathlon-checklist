@@ -83,6 +83,30 @@ def insert_blog():
     blog.insert_one(request.form.to_dict())
     return redirect(url_for("blog_list"))
 
+@app.route("/delete_blog/<blog_id>")                                                                 # function to delete blog
+def delete_blog(blog_id):
+    mongo.db.blog.remove({"_id": ObjectId(blog_id)})
+    return redirect(url_for("blog_list"))
+
+
+@app.route("/edit_blog/<blog_id>")                                                                 # function to edit blog 
+def edit_blog(blog_id):
+    the_blog =  mongo.db.blog.find_one({"_id": ObjectId(blog_id)})
+    return render_template("editblog.html", blog=the_blog)
+
+
+@app.route('/update_blog/<blog_id>', methods=["POST"])                                         #  path to update eventlist/populate updated eventlist 
+def update_blog(blog_id):
+    blog = mongo.db.blog
+    blog.update({'_id': ObjectId(blog_id)},                                          
+    {
+        'blog_title': request.form.get('blog_title'),
+        'blog_content': request.form.get('blog_content')
+       
+    })
+    return redirect(url_for('blog_list'))
+
+
 
 
 @app.route("/event_list")                                                                            # page for events list
@@ -119,7 +143,10 @@ def update_eventlist(events_id):
         'discipline_type': request.form.get('discipline_type'),
         'name': request.form.get('name'),
         'location': request.form.get('location'),
-        'date': request.form.get('date')
+        'date': request.form.get('date'),
+        'swim_time': request.form.get('swim_time'),
+        'cycle_time': request.form.get('cycle_time'),
+        'run_time': request.form.get('run_time'),
        
     })
     return redirect(url_for('event_list'))
