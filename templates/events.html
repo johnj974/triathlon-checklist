@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="races" class="col">
-    <form action="" method="POST">
+   
 	<table class="table">
 		<thead>
 			<tr>
@@ -9,6 +9,9 @@
 				<th scope="col">Name</th>
 				<th scope="col">Event Type</th>
 				<th scope="col">Location</th>
+                <th scope="col">Swim Time</th>
+                <th scope="col">Cycle Time</th>
+                <th scope="col">Run Time</th>
                 <th scope="col">Enter</th>
                 <th scope="col">Update</th>
                 <th scope="col">Delete</th>
@@ -21,6 +24,9 @@
 				<td>{{type.name}}</td>
 				<td>{{type.discipline_type}}</td>
 				<td>{{type.location}}</td>
+                <td>{{type.swim_time}}</td>
+                <td>{{type.cycle_time}}</td>
+                <td>{{type.run_time}}</td>
                 <td><button type="button" class="btn btn-outline-success">Success</button></td>
                 <td><a href="{{url_for('edit_eventlist', events_id=type._id)}}"><button type="button" class="btn btn-outline-secondary">Secondary</button></a></td>
                 <td><a href="{{url_for('delete_events', events_id=type._id)}}"><button type="button" class="btn btn-outline-danger">Danger</button></a></td>
@@ -28,7 +34,7 @@
 		</tbody>
 		{% endfor %}
 	</table>
-    </form>
+  
 </div>
 
 {% endblock %}

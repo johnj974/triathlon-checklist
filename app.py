@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from flask_table import Table
 
 from os import path
 if path.exists("env.py"):
@@ -47,7 +48,7 @@ def edit_checklist(checklist_id):
                            disciplines=all_disciplines)
 
 
-@app.route('/update_list/<checklist_id>', methods=["POST"])                                         # update path to update checklist/populate editlist 
+@app.route('/update_list/<checklist_id>', methods=["POST"])                                         #  path to update checklist/populate updated checklist 
 def update_list(checklist_id):
     checklist = mongo.db.checklist
     checklist.update({'_id': ObjectId(checklist_id)},
@@ -101,6 +102,7 @@ def delete_events(events_id):
     mongo.db.events.remove({"_id": ObjectId(events_id)})
     return redirect(url_for("event_list"))
 
+
 @app.route("/edit_eventlist/<events_id>")                                                            # function to edit event list
 def edit_eventlist(events_id):
     the_eventlist =  mongo.db.events.find_one({"_id": ObjectId(events_id)})
@@ -109,7 +111,18 @@ def edit_eventlist(events_id):
                            types=all_types)
 
 
-
+@app.route('/update_eventlist/<events_id>', methods=["POST"])                                         #  path to update eventlist/populate updated eventlist 
+def update_eventlist(events_id):
+    events = mongo.db.events
+    events.update({'_id': ObjectId(events_id)},                                          
+    {
+        'discipline_type': request.form.get('discipline_type'),
+        'name': request.form.get('name'),
+        'location': request.form.get('location'),
+        'date': request.form.get('date')
+       
+    })
+    return redirect(url_for('event_list'))
 
 
 

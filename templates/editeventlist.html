@@ -1,34 +1,38 @@
 {% extends 'base.html' %}
 {% block content %}
 <div id="selector" class="container-fluid">
-	<h2>Edit Checklist</h2>
+	<h2>Edit Event List</h2>
 	<div class="row">
 		<div id="swim" class="col-md-8">
-            
+
 		</div>
 
 		<div id="run" class="col-md-4">
-			<form action="" method="POST">
-                    <div class="form-group">
-                        <label for="discipline_type">Create Event</label>
-                        <select class="form-control" id="types" name="discipline_type">
+			<form action="{{ url_for('insert_event')}}" method="POST">
+				<div class="form-group">
+					<label for="discipline_type">Create Event</label>
+					<select class="form-control" id="types" name="discipline_type">
                         {% for type in types %}
+                            {% if type.discipline_type == type.discipline_type %}
+                            <option value="{{ type.discipline_type }}" selected>{{ type.discipline_type }}</option>
+                            {% else %}
                             <option value="{{ type.discipline_type }}">{{ type.discipline_type }}</option>
+                            {% endif %}
                         {% endfor %}
                         </select>
-                        <label for="name">Event Name</label>
-                        <input class="form-control" type="text" id="name" name="name">
-                        <label for="location">County Location</label>
-                        <input class="form-control" type="text" id="location" name="location">
-                        <label for="date">Date</label>
-                        <input type="date" id="date" name="date" class="form-control">
-                      
+					<label for="name">Event Name</label>
+					<input class="form-control" type="text" id="name" name="name" value="{{events.name}}">
+					<label for="location">County Location</label>
+					<input class="form-control" type="text" id="location" name="location" value="{{events.location}}">
+					<label for="date">Date</label>
+					<input type="date" id="date" name="date" class="form-control" value="{{events.date}}">
+
                     </div>
-                    <div class="form-row">
-                    
-                    </div>
-                    <button type="submit" class="btn btn-primary">Edit Event List</button>
-            </form>
+					<div class="form-row">
+
+					</div>
+					<button type="submit" class="btn btn-primary">Edit Event List</button>
+			</form>
 		</div>
 	</div>
 </div>
