@@ -147,7 +147,7 @@ def edit_eventlist(events_id):
                            types=all_types)
 
 
-#  path to update eventlist/populate updated eventlist
+# path to update eventlist/populate updated eventlist
 @app.route('/update_eventlist/<events_id>', methods=["POST"])
 def update_eventlist(events_id):
     events = mongo.db.events
@@ -159,9 +159,18 @@ def update_eventlist(events_id):
                     'date': request.form.get('date'),
                     'swim_time': request.form.get('swim_time'),
                     'cycle_time': request.form.get('cycle_time'),
-                    'run_time': request.form.get('run_time'),
+                    'run_time': request.form.get('run_time')
                 })
     return redirect(url_for('event_list'))
+
+
+# record event page
+@app.route("/record_event")
+def record_event():
+    return render_template("recordevent.html",
+                           disciplines=mongo.db.disciplines.find(),
+                           events=mongo.db.events.find(),
+                           types=mongo.db.types.find())
 
 
 if __name__ == "__main__":

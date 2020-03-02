@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div id="selector" class="container-fluid">
-	<h2>Create Checklist</h2>
+	<h4>Create Checklist</h4>
 	<div class="row">
 		<div id="swim" class="col-md-8">
             <form action="{{ url_for('insert_list')}}" method="POST">
@@ -36,38 +36,12 @@
                     <input id="item7" name="item4" type="text" class="form-control" placeholder="item7">
                     </div>
                 </div>
-                 <button type="submit" class="btn btn-primary">Create Checkist</button>
+                <button type="submit" class="btn btn-success">Create Checklist</button>
             </form>
 		</div>
 
 		<div id="run" class="col-md-4">
-            <form action="{{url_for('insert_event')}}" method="POST">
-                    <div class="form-group">
-                        <label for="discipline_type">Create Event</label>
-                        <select class="form-control" id="types" name="discipline_type">
-                        {% for type in types %}
-                            <option value="{{ type.discipline_type }}">{{ type.discipline_type }}</option>
-                        {% endfor %}
-                        </select>
-                        <label for="name">Event Name</label>
-                        <input class="form-control" type="text" id="name" name="name">
-                        <label for="location">County Location</label>
-                        <input class="form-control" type="text" id="location" name="location">
-                        <label for="date">Date</label>
-                        <input type="date" id="date" name="date" class="form-control">
-                        <label for="date">Swim Time</label>
-                        <input type="text" id="swim_time" name="swim_time" class="form-control">
-                        <label for="date">Cycle Time</label>
-                        <input type="text" id="cycle_time" name="cycle_time" class="form-control">
-                        <label for="date">Run Time</label>
-                        <input type="text" id="run_time" name="run_time" class="form-control">
-                      
-                    </div>
-                    <div class="form-row">
-                    
-                    </div>
-                    <button type="submit" class="btn btn-primary">Create Checkist</button>
-            </form>
+           
 		</div>
 	</div>
 </div>

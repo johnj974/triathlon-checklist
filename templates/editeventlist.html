@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 <div id="selector" class="container-fluid">
-	<h2>Edit Event List</h2>
+	<h4>Edit Recorded Event</h4>
 	<div class="row">
-		<div id="swim" class="col-md-8">
-
-		</div>
 
 		<div id="run" class="col-md-4">
 			<form action="{{ url_for('update_eventlist', events_id=events._id)}}" method="POST">
@@ -38,7 +35,7 @@
 					<div class="form-row">
 
 					</div>
-					<button type="submit" class="btn btn-primary">Edit Event List</button>
+				    <button type="submit" class="btn btn-outline-secondary">Edit Event</button>
 			</form>
 		</div>
 	</div>
