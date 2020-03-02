@@ -3,7 +3,7 @@
 <div id="selector" class="container-fluid">
 	<h4>Create Checklist</h4>
 	<div class="row">
-		<div id="swim" class="col-md-8">
+		<div id="checklist" class="col-md-8">
             <form action="{{ url_for('insert_list')}}" method="POST">
                 <div class="form-group">
                     <label for="disciplines">Select Discipline</label>
@@ -38,10 +38,6 @@
                 </div>
                 <button type="submit" class="btn btn-success">Create Checklist</button>
             </form>
-		</div>
-
-		<div id="run" class="col-md-4">
-           
 		</div>
 	</div>
 </div>

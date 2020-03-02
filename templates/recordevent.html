@@ -3,7 +3,7 @@
 <div id="selector" class="container-fluid">
 	<h4>Record Event</h4>
 	<div class="row">
-		<div id="swim" class="col-md-8">
+		<div id="center" class="col-md-8">
               <form action="{{url_for('insert_event')}}" method="POST">
                     <div class="form-group">
                         <label for="discipline_type">Record Event</label>
@@ -24,19 +24,12 @@
                         <input type="text" id="cycle_time" name="cycle_time" class="form-control">
                         <label for="date">Run Time</label>
                         <input type="text" id="run_time" name="run_time" class="form-control">
-                      
                     </div>
                     <div class="form-row">
-                    
                     </div>
                     <button type="submit" class="btn btn-success">Create Event</button>
             </form>   
-            
-		</div>
-
-		<div id="run" class="col-md-4">
-           
-		</div>
+        </div>
 	</div>
 </div>
 {% endblock %}

@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 <div id="selector" class="container-fluid">
-	<h2>Edit Checklist</h2>
+	<h4>Edit Checklist</h4>
 	<div class="row">
-		<div id="swim" class="col-md-8">
+		<div id="checklist" class="col-md-8">
             <form action="{{ url_for('update_list', checklist_id=checklist._id)}}" method="POST">
                 <div class="form-group">
                     <label for="disciplines">Select Discipline</label>
@@ -42,10 +42,6 @@
                 </div>
                 <button type="submit" class="btn btn-outline-secondary">Edit Checklist</button>
             </form>
-		</div>
-
-		<div id="run" class="col-md-4">
-			
 		</div>
 	</div>
 </div>

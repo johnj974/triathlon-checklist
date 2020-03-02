@@ -1,17 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 body{
-    background-color: seashell;
+    background-color: white;
     margin: 0;
     padding: 0;
     font-family: Roboto;
 }
 
 #races{
-    height: 50vh;
-}
-
-#checklist{
     height: 50vh;
 }
 
@@ -28,7 +24,7 @@ ul li{
 }
 
 ul li i{
-    color:  red;
+    color: purple;
     transition: color 0.5s ease-in-out;
 }
 
@@ -36,8 +32,13 @@ ul li i:hover{
     color: green;
 }
 
+.navbar{
+    width: 90%;
+    margin: auto;
+}
+
 .navbar .nav-item .nav-link{
-    color:red;
+    color:purple;
     text-align: right;
 }
 
@@ -47,17 +48,24 @@ ul li i:hover{
 }
 
 .navbar .navbar-toggler icon{
-    color:red;
+    color:purple;
+}
+
+.navbar .navbar-brand:hover{
+    color: purple;
+    transition: color 0.5s ease-in-out;
 }
 
 #selector{
     height: 80vh;
-    background-color: seashell;
+    background-color: white;
 }
 
-#swim{
-    background-color:slategray;
+#checklist{
+    background-color:white;
     height: 70vh;
+    width: 90%;
+    margin: auto;
 }
 
 #cycle{
@@ -68,8 +76,28 @@ ul li i:hover{
     height: 70vh;
 }
 
-#homeButtons{
-    display:inline;
-    text-align: right;
+#center{
+    width :90%;
+    margin: auto;
+}
+
+.btn-link{
+    color: purple;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+h4{
+    text-align: center;
+}
+
+input{
+    margin-top: 10px;
 }
 

@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-fluid">
-	<div id="checklist" class="row">
-		<div class="col">
+    <h4>Required Equipment</h4>
+	<div class="row">
+		<div class="col-md-8" id="center">
 			<div class="accordion" id="accordionExample">
 				<div class="card">
 					{% for item in check %}
@@ -11,14 +12,13 @@
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne{{loop.index}}" aria-expanded="true" aria-controls="collapseOne">
                                 {{ item.discipline_name }}
                             </button>
-                            <span id="homeButtons">
+                            <div>
                             <a href="{{url_for('edit_checklist', checklist_id=item._id)}}"><button type="button" class="btn btn-outline-secondary">Edit</button></a>
                             <a href="{{url_for('delete_checklist', checklist_id=item._id)}}"><button type="button" class="btn btn-outline-danger">Delete</button></a>
-                            </span>
+                            </div>
 						</h2>
 					</div>
-    
-					<div id="collapseOne{{loop.index}}" class="collapsing"
+                        <div id="collapseOne{{loop.index}}" class="collapsing"
 						data-parent="#accordionExample">
 						<div class="card-body">
 							<p>{{ item.item1 }}</p>
