@@ -2,50 +2,46 @@
 {% block content %}
 <h4>Notes</h4>
 <div class="container-fluid">
-    <div class="row">
-    <div class="col-md-8" id="center">
-	<form action="{{url_for('insert_blog')}}" method="POST">
-		<div class="form-group">
-            <label for="blog_title">Title</label>
-            <input id="blog_title" name="blog_title" class="form-control" type="text">
-			<label for="blog_content">Content</label>
-			<textarea class="form-control" id="blog_content" name="blog_content" rows="5"></textarea>
-		</div>
-            <button type="submit" class="btn btn-success">Create Note</button>
-	</form>
-
-	<div>
-        <br>
-		<div class="accordion" id="accordionExample">
-				<div class="card">
-					{% for entry in entries %}
-					<div class="card-header">
-                        <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne{{loop.index}}" aria-expanded="true" aria-controls="collapseOne">
+	<div class="row">
+		<div class="col-md-8" id="center">
+			<form action="{{url_for('insert_blog')}}" method="POST">
+				<div class="form-group">
+					<label for="blog_title">Title</label>
+					<input id="blog_title" name="blog_title" class="form-control" type="text">
+					<label for="blog_content">Content</label>
+					<textarea class="form-control" id="blog_content" name="blog_content" rows="5"></textarea>
+				</div>
+				<button type="submit" class="btn btn-success">Create Note</button>
+			</form>
+			<div>
+				<br>
+				<div class="accordion" id="accordionExample">
+					<div class="card">
+						{% for entry in entries %}
+						<div class="card-header">
+							<h2 class="mb-0">
+								<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne{{loop.index}}" aria-expanded="true" aria-controls="collapseOne">
                                 {{ entry.blog_title }}
                             </button>
-                            <div>
-                            <a href="{{url_for('edit_blog', blog_id=entry._id)}}"><button type="button" class="btn btn-outline-secondary">Edit</button></a>
-                            <a href="{{url_for('delete_blog', blog_id=entry._id)}}"><button type="button" class="btn btn-outline-danger">Delete</button></a>
-                            </div>
-						</h2>
-					</div>
-    
-					<div id="collapseOne{{loop.index}}" class="collapsing"
-						data-parent="#accordionExample">
-						<div class="card-body">
-							<p>{{ entry.blog_content }}</p>
+								<div>
+									<a href="{{url_for('edit_blog', blog_id=entry._id)}}"><button type="button" class="btn btn-outline-secondary">Edit</button></a>
+									<a href="{{url_for('delete_blog', blog_id=entry._id)}}"><button type="button" class="btn btn-outline-danger">Delete</button></a>
+								</div>
+							</h2>
 						</div>
+						<div id="collapseOne{{loop.index}}" class="collapsing" data-parent="#accordionExample">
+							<div class="card-body">
+								<p>{{ entry.blog_content }}</p>
+							</div>
+						</div>
+						{% endfor %}
 					</div>
-					{% endfor %}
 				</div>
 			</div>
+		</div>
 	</div>
-	</div>
-    </div>
 </div>
 
 
 
 {% endblock %}
-

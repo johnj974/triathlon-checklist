@@ -37,7 +37,7 @@ ul li i:hover{
   bottom: 0;
   width: 100%;
   text-align: center;
-  margin-top: 2%;
+  margin-top: 3%;
   margin-bottom: 2%;
 }
 
@@ -80,27 +80,27 @@ ul li i:hover{
 }
                                         /*-----------------sections------------------*/
 #races{
-    height: 50vh;
+    height: 90%;
 }
 
 #selector{
-    height: 80vh;
+    height: 90%;
     background-color: white;
 }
 
 #checklist{
     background-color:white;
-    height: 70vh;
+    height: 90%;
     width: 90%;
     margin: auto;
 }
 
 #cycle{
-    height: 70vh;
+    height: 90%;
 }
 
 #run{
-    height: 70vh;
+    height: 90%;
 }
 
 #center{
@@ -116,11 +116,15 @@ h4{
 }
 
 input{
-    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 label{
     margin-bottom: 0px;
+}
+
+#name{
+    margin-top: 3%;
 }
 
 
