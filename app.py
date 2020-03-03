@@ -8,7 +8,7 @@ from os import path
 if path.exists("env.py"):
     import env
 
-MONGO_URI = os.environ.get("tridata")
+MONGO_URI = os.environ.get("TRIDATA")
 
 app = Flask(__name__)
 
