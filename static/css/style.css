@@ -73,6 +73,13 @@ ul li i:hover{
 
 .navbar .navbar-brand{
     color: purple;
+    margin-left: 10%;
+}
+
+@media only screen and (max-width: 600px) {
+   .navbar .navbar-brand{
+    margin-left: 0;
+  }
 }
 
 .navbar .navbar-brand:hover{
