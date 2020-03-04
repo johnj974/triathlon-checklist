@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div id="selector" class="container-fluid">
-	<h4>Edit Checklist</h4>
+	<h4>Equipment Checklist</h4>
 	<div class="row">
 		<div id="checklist" class="col-md-8">
             <form action="{{ url_for('update_list', checklist_id=checklist._id)}}" method="POST">
@@ -19,25 +19,25 @@
                 </div>
                 <div class="form-row">
                     <div class="col-12">
-                    <input id="item1" name="item1" type="text" class="form-control"  value="{{checklist.item1}}">
+                    <input id="item1" name="item1" type="text" class="form-control" maxlength="15" value="{{checklist.item1}}">
                     </div>
                     <div class="col-12">
-                    <input id="item2" name="item2" type="text" class="form-control"  value="{{checklist.item2}}">
+                    <input id="item2" name="item2" type="text" class="form-control" maxlength="15" value="{{checklist.item2}}">
                     </div>
                     <div class="col-12">
-                    <input id="item3" name="item3" type="text" class="form-control"  value="{{checklist.item3}}">
+                    <input id="item3" name="item3" type="text" class="form-control" maxlength="15" value="{{checklist.item3}}">
                     </div>
                     <div class="col-12">
-                    <input id="item4" name="item4" type="text" class="form-control"  value="{{checklist.item4}}">
+                    <input id="item4" name="item4" type="text" class="form-control" maxlength="15" value="{{checklist.item4}}">
                     </div>
                     <div class="col-12">
-                    <input id="item5" name="item5" type="text" class="form-control"  value="{{checklist.item5}}">
+                    <input id="item5" name="item5" type="text" class="form-control" maxlength="15" value="{{checklist.item5}}">
                     </div>
                     <div class="col-12">
-                    <input id="item6" name="item6" type="text" class="form-control"  value="{{checklist.item6}}">
+                    <input id="item6" name="item6" type="text" class="form-control" maxlength="15" value="{{checklist.item6}}">
                     </div>
                     <div class="col-12">
-                    <input id="item7" name="item7" type="text" class="form-control"  value="{{checklist.item7}}">
+                    <input id="item7" name="item7" type="text" class="form-control" maxlength="15" value="{{checklist.item7}}">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-outline-secondary">Edit Checklist</button>

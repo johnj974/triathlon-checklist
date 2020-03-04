@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div id="selector" class="container-fluid">
-	<h4>Edit Recorded Event</h4>
+	<h4>Events</h4>
 	<div class="row">
 		<div id="center" class="col-md-8">
 			<form action="{{ url_for('update_eventlist', events_id=events._id)}}" method="POST">
@@ -16,9 +16,9 @@
                         {% endfor %}
                         </select>
 					<label for="name">Event Name</label>
-					<input class="form-control" type="text" id="name" name="name" value="{{events.name}}">
+					<input class="form-control" type="text" id="name" name="name" maxlength="18" value="{{events.name}}">
 					<label for="location">County Location</label>
-					<input class="form-control" type="text" id="location" name="location" value="{{events.location}}">
+					<input class="form-control" type="text" id="location" name="location" maxlength="15" value="{{events.location}}">
 					<label for="date">Date</label>
 					<input type="date" id="date" name="date" class="form-control" value="{{events.date}}">
 					<label for="swim_time">Swim Time</label>
