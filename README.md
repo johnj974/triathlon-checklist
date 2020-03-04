@@ -23,7 +23,7 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
 <p>The strategy for the site was to make a simple user friendly app that could be used by anyone who is involved or who wishes to try
  a triathlon, A lot of people when they are considering doing a triathlon for the first time only do one of the disciplines as part of a team
  I made this app as an assistant to a triathlete to make a checklist of equipment they use for each discipline and to also be able to record
- and maintain records of upcoming events and of previous event times and also to record individual observations ina notes section
+ and maintain records of upcoming events and of previous event times and also to record individual observations in a notes section
  I designed the app to be user friendly on both desktop and mobile device, I decided to go with a very minimalistic design
  to record and edit triathlon related information as essentially the main purpose of the site is its CRUD functionallity and
  the clear presentation and interactivity of that data.
@@ -71,7 +71,8 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
 </a>Features Left to Implement</h2>
 <p>I would in future add an individual login page so that a person could have their own personal information stored privately and they
    would be able to update and delete their own records, I would also add another page for training plans where you could keep a record
-   of a plan and update or change it accordingly. The notes page could be used for this feature. </p>
+   of a plan and update or change it accordingly. The notes page could be used for this feature. I will add a search function in the future
+   that will allow you to search for events based on the event type and which will display them together. </p>
 
 <h2><a id="user-content-technologies-used" class="anchor" aria-hidden="true" href="#technologies-used"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Technologies Used</h2>
 <p></p>
@@ -130,13 +131,24 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
   <li>10. I went back to Heroku, go to settings, go to reveal config vars, input my IP and PORT</li>
       addresses and also add in any variables that are kept in the gitignore file.
   <li>11. When all configs are input I clicked on open app and my project was being hosted by Heroku.</li>
+  <li>12. My initial deployment was implemented using the ClI, further deployments were initialised from the heroku dashboard.</li>
+  <li>13. To deploy from heroku I added,commited and pushed any changes of code to github.</li>
+  <li>14. I went to the deploy section in heroku which is already referanced to the app name.</li>
+  <li>15. I chose connect to github in the deployment method of the deploy page.</li>
+  <li>16. I input my github login details and the app i wished to connect with</li>
+  <li>17. When i received notification of the connection i chose manual deploy of the app.</li>
+  <li>18. The most up to date version of the app is then hosted on Heroku</li>
     </ul>
     </p>
 <h2><a id="user-content-credits" class="anchor" aria-hidden="true" href="#credits"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>
 </a>Credits</h2>
 <h3><a id="user-content-content" class="anchor" aria-hidden="true" href="#content"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>
-</a>Content</h3>
-<p>The content on the page is all entirely user inputed data</p>
+</a>Data Schema</h3>
+<p>All the data that can be seen on the website is stored in a mongodb database, the data is stored in a collections folder
+ called triathlon-checklist. this data is then stored in three sub folders called blog, checklist and events, the blog subfolder
+ is a standalone folder for the notes section of the site. the checklist subfolder has a relational subfolder called disciplines
+  that links them together using the three differant types of disciplines involved in triathlons. The events subfolder is connected
+  to a types subfolder that links the folders together using the differant types of triathlons that you can enter into.</p>
 
 <h3><a id="user-content-media" class="anchor" aria-hidden="true" href="#media"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>
 </a>Media</h3>
