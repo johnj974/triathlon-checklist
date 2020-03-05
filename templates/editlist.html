@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div id="selector" class="container-fluid">
-	<h4>Equipment Checklist</h4>
+	<h4>Checklist Editor</h4>
 	<div class="row">
 		<div id="checklist" class="col-md-8">
             <form action="{{ url_for('update_list', checklist_id=checklist._id)}}" method="POST">

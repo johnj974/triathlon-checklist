@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div id="center">
-<h4>Notes</h4>
+<h4>Note Editor</h4>
 	<form action="{{ url_for('update_blog', blog_id=blog._id)}}" method="POST">
 		<div class="form-group">
 			<label for="blog_title">Title</label>

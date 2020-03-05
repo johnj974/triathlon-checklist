@@ -43,7 +43,7 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
 <p>There are attached files showing the original rough drawings for the site.
    The original drawings for the site are differant from the finished site as I found when I designing it with the original
    layout the information was looking too cluttered and cramped so the design of the site changed to accomadate the presentation
-   of the data. The wireframe sketches for the original site were based on having just two pages but this swelled to eight pages.
+   of the data. The wireframe sketches for the original site were based on having just two pages but this swelled to nine pages.
    The original sketches for the site can be found in the wireframes folder.</p>
 
 <h3>Surface</h3>
@@ -72,10 +72,9 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
 </a>Features Left to Implement</h2>
 <p>I would in future add an individual login page so that a person could have their own personal information stored privately and they
    would be able to update and delete their own records, I would also add another page for training plans where you could keep a record
-   of a plan and update or change it accordingly. The notes page could be used for this feature. I will add a search function in the future
+   of a plan and update or change it accordingly. The notes page could currently be used for this feature. I will add a search function in the future
    that will allow you to search for events based on the event type and which will display them together. during testing I noticed that it
-   would be nice to have a timestamp of the each input so I will put that in in the future also. Also in the future I would add a page that
-   would have recommendations for triathlon equipment. </p>
+   would be nice to have a timestamp of the each input so I will put that in in the future also. </p>
 
 <h2><a id="user-content-technologies-used" class="anchor" aria-hidden="true" href="#technologies-used"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Technologies Used</h2>
 <p></p>
@@ -104,13 +103,16 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
 </p>
 <p>During manual testing of the site I noticed that on some of the pages the content when expanded was flowing beyond the footer element and
    it was ok on other pages, I had originally wanted to keep the footer to the bottom of the page but I had to change that to accomadate all
-   the pages. Initially the events page when viewed on mobile was only side scrollable and seemed to be flowing outside of the parent div
-    which messed up the alignment of the header and footer elements on the page which did not look good so
+   the pages.I set a container height for the main sections of the pages and this then ensured that the footer would stay below them with the
+   relative positioning. Initially the events page when viewed on mobile was only side scrollable and seemed to be flowing outside of the parent div
+   which messed up the alignment of the header and footer elements on the page which did not look good so
    I used a media query to change the layout of the information presented so that it would appear in a card like display when on a smaller screen.
    </p>
 <p>Validation testing was done on all of the code using HTML CSS and PEP8 validators, all errors in CSS and PEP8 validations were fixed. 
-   There is a line that is being flagged for being too long in the pep8 validator that i used, I left it that way as to split it affected the
-   edit page for the home page.To see the failure see line 49 in the app.py file and split the code after find_one and move the split code a line
+   There is a line that is being flagged for being too long in the pep8 validator that i used,I originally addressed this issue but found out
+   after that this position change effected the functionality of the site hwere i was getting a 404 error when the edit button was pressed
+   on the edit page and also the edit screen was not populating with the already preselected checklist items so I reverted to the original code.
+   To see the failure see line 49 in the app.py file and split the code after find_one and move the split code a line
    below, this causes the code to fail.
     </p>
  
@@ -146,7 +148,7 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
   <li>18. The most up to date version of the app is then hosted on Heroku</li>
     </ul>
     </p>
-    <h3>Data Schema</h3>
+    <h2>Data Schema</h2>
     <p>All the data that can be seen on the website is stored in a mongodb database, the data is stored in a collections folder
     called triathlon-checklist. this data is then stored in three sub folders called blog, checklist and events, the blog subfolder
     is a standalone folder for the notes section of the site. the checklist subfolder has a relational subfolder called disciplines

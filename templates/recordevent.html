@@ -1,18 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 <div id="selector" class="container-fluid">
-	<h4>Events</h4>
+	<h4>Event Recorder</h4>
 	<div class="row">
 		<div id="center" class="col-md-8">
 			<form action="{{url_for('insert_event')}}" method="POST" autocomplete="on">
 				<div class="form-group">
-					<label for="discipline_type">Record Event</label>
+					<label for="discipline_type">Event</label>
 					<select class="form-control" id="types" name="discipline_type">
                         {% for type in types %}
                             <option value="{{ type.discipline_type }}">{{ type.discipline_type }}</option>
                         {% endfor %}
                         </select>
-					<input class="form-control" type="text" id="name" name="name" maxlength="18" placeholder="Event Name">
+					<input class="form-control" type="text" id="name" name="name" maxlength="20" placeholder="Event Name">
 					<input class="form-control" type="text" id="location" name="location" maxlength="15" placeholder="County Location">
 					<input type="date" id="date" name="date" class="form-control" placeholder="Date">
 					<input type="number" id="swim_time" name="swim_time" class="form-control" placeholder="Swim time">
