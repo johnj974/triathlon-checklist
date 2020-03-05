@@ -52,13 +52,7 @@ ul li i:hover{
     text-decoration: none;
 }
 
-strong{
-    color: orangered;
-}
 
-ol{
-    padding-left: 5%;
-}
                                 /*--------------------------------navbar-------------------------------*/
 .navbar{
     width: 90%;
@@ -135,7 +129,7 @@ ol{
     width :90%;
     margin: auto;
 }
-
+                                                /*-------------text decoration--------------*/
 h4{
     text-align: center;
     margin-bottom: 2%;
@@ -160,7 +154,18 @@ label{
 #name{
     margin-top: 3%;
 }
-                                        /*------------------table--------------------*/
+
+strong{
+    color: orangered;
+}
+
+@media only screen and (max-width: 600px) {
+   ol{
+    padding-left: 5%;
+  }
+}
+
+                                        /*------------------data table--------------------*/
 @media only screen and (max-width: 600px) {
 	table, thead, tbody, th, td, tr { 
 		display: block; 
@@ -200,5 +205,5 @@ td:nth-of-type(1):before { content: "Event Name"; }
 	td:nth-of-type(6):before { content: "Run Time"; }
 }    
 
-
+                                   
 
