@@ -51,6 +51,14 @@ ul li i:hover{
     transition: color 0.5s ease-in-out;
     text-decoration: none;
 }
+
+strong{
+    color: orangered;
+}
+
+ol{
+    padding-left: 5%;
+}
                                 /*--------------------------------navbar-------------------------------*/
 .navbar{
     width: 90%;
