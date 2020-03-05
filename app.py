@@ -46,8 +46,7 @@ def add_list():
 # function to edit checklist
 @app.route("/edit_checklist/<checklist_id>")
 def edit_checklist(checklist_id):
-    the_checklist = mongo.db.checklist.find_one
-    ({"_id": ObjectId(checklist_id)})
+    the_checklist = mongo.db.checklist.find_one({"_id": ObjectId(checklist_id)})
     all_disciplines = mongo.db.disciplines.find()
     return render_template("editlist.html", checklist=the_checklist,
                            disciplines=all_disciplines)
@@ -172,6 +171,12 @@ def record_event():
                            disciplines=mongo.db.disciplines.find(),
                            events=mongo.db.events.find(),
                            types=mongo.db.types.find())
+
+
+# page for equipment suggestions
+@app.route("/equipment_list")
+def equipment_list():
+    return render_template("equipment.html")
 
 
 if __name__ == "__main__":

@@ -43,14 +43,15 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
 <p>There are attached files showing the original rough drawings for the site.
    The original drawings for the site are differant from the finished site as I found when I designing it with the original
    layout the information was looking too cluttered and cramped so the design of the site changed to accomadate the presentation
-   of the data.</p>
+   of the data. The wireframe sketches for the original site were based on having just two pages but this swelled to eight pages.
+   The original sketches for the site can be found in the wireframes folder.</p>
 
 <h3>Surface</h3>
 <p>Because i chose a minimalistic approach to the design of the site where the focus is on the data I decided to use a single font
-   I chose the Roboto font as I felt it has clean lines. I chose to apply colours to just the internal and external links to make
+   I chose the Roboto font as I felt it is a clean clear text. I chose to apply colours to just the internal and external links to make
    them stand out, I used heroku purple as all my clickable elements on the page which fade to orange when hovered over. I used the bootstrap
    styled buttons on the site as they matched the minimalist design of the site. I kept the colours of the buttons the same as bootstrap as I
-   felt the colours give a good visual representation of what they do, red for delete, green for create and grey for edit.</p>
+   felt the colours give a good visual representation of what they do, red for delete, green for create and grey for edit. </p>
 
 <h2><a id="user-content-features" class="anchor" aria-hidden="true" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>
 </a>Features</h2>
@@ -72,7 +73,9 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
 <p>I would in future add an individual login page so that a person could have their own personal information stored privately and they
    would be able to update and delete their own records, I would also add another page for training plans where you could keep a record
    of a plan and update or change it accordingly. The notes page could be used for this feature. I will add a search function in the future
-   that will allow you to search for events based on the event type and which will display them together. </p>
+   that will allow you to search for events based on the event type and which will display them together. during testing I noticed that it
+   would be nice to have a timestamp of the each input so I will put that in in the future also. Also in the future I would add a page that
+   would have recommendations for triathlon equipment. </p>
 
 <h2><a id="user-content-technologies-used" class="anchor" aria-hidden="true" href="#technologies-used"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Technologies Used</h2>
 <p></p>
@@ -105,7 +108,10 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
     which messed up the alignment of the header and footer elements on the page which did not look good so
    I used a media query to change the layout of the information presented so that it would appear in a card like display when on a smaller screen.
    </p>
-<p>Validation testing was done on all of the code using HTML CSS and PEP8 validators, all errors in CSS and PEP8 validations were fixed.
+<p>Validation testing was done on all of the code using HTML CSS and PEP8 validators, all errors in CSS and PEP8 validations were fixed. 
+   There is a line that is being flagged for being too long in the pep8 validator that i used, I left it that way as to split it affected the
+   edit page for the home page.To see the failure see line 49 in the app.py file and split the code after find_one and move the split code a line
+   below, this causes the code to fail.
     </p>
  
  
@@ -121,7 +127,7 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
    <li>4. Log into Heroku from the CLI, I needed to provide confirmation using a url.</li>
    <li>5. I insured that the requirements.txt file was installed along with a procfile and that</li>
       all environmental variables were safely hidden in a git ignore file.
-   <li>6. Added my files and then commited them to the github repository.</li>
+   <li>6. I added my files and then commited them to the github repository.</li>
    <li>7. From the Heroku home page that has my app that was created earlier I copied a
       line of code under the Create a new directory that has my application name
       and inserted it into the CLI to create a link between my code and Heroku.</li>
@@ -140,15 +146,17 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
   <li>18. The most up to date version of the app is then hosted on Heroku</li>
     </ul>
     </p>
+    <h3>Data Schema</h3>
+    <p>All the data that can be seen on the website is stored in a mongodb database, the data is stored in a collections folder
+    called triathlon-checklist. this data is then stored in three sub folders called blog, checklist and events, the blog subfolder
+    is a standalone folder for the notes section of the site. the checklist subfolder has a relational subfolder called disciplines
+    that links them together using the three differant types of disciplines involved in triathlons. The events subfolder is connected
+    to a types subfolder that links the folders together using the differant types of triathlons that you can enter into.</p>
 <h2><a id="user-content-credits" class="anchor" aria-hidden="true" href="#credits"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>
 </a>Credits</h2>
 <h3><a id="user-content-content" class="anchor" aria-hidden="true" href="#content"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>
-</a>Data Schema</h3>
-<p>All the data that can be seen on the website is stored in a mongodb database, the data is stored in a collections folder
- called triathlon-checklist. this data is then stored in three sub folders called blog, checklist and events, the blog subfolder
- is a standalone folder for the notes section of the site. the checklist subfolder has a relational subfolder called disciplines
-  that links them together using the three differant types of disciplines involved in triathlons. The events subfolder is connected
-  to a types subfolder that links the folders together using the differant types of triathlons that you can enter into.</p>
+</a>Content</h3>
+    <p>The content on all the CRUD functional pages is entirely user generated.
 
 <h3><a id="user-content-media" class="anchor" aria-hidden="true" href="#media"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>
 </a>Media</h3>
@@ -157,6 +165,8 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
 <h3><a id="user-content-acknowledgements" class="anchor" aria-hidden="true" href="#acknowledgements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>
 </a>Acknowledgements</h3>
 <p>To find the solution to the table data displaying correctly I read an article on Responsive Data Tables from <a href="https://css-tricks.com/responsive-data-tables/" target="_blank">css.tricks</a><br>
-   and used some of the code from this article along with some of my own to make it work for this project</p>
+   and used some of the code from this article along with some of my own to make it work for this project<br>
+  The equipment suggestions page is a copy of The ultimate triathlon race day checklist by <a href="https://completetri.com/the-ultimate-triathlon-race-day-checklist/" target="_blank">completetri.com.</a></p>
+    
 </article>
   </div>

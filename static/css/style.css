@@ -103,6 +103,18 @@ ul li i:hover{
     margin: auto;
 }
 
+#equipment{
+    background-color:white;
+    width: 80%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+   #equipment{
+    width:100%;
+  }
+}
+
 #cycle{
     height: 90%;
 }
