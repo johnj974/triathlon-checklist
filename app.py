@@ -22,11 +22,17 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def index():
-    return render_template("home.html", check=mongo.db.checklist.find(),
+    return render_template("home.html")
+
+
+# checklist page
+@app.route("/checklist")
+def checklist():
+    return render_template("checklist.html", check=mongo.db.checklist.find(),
                            types=mongo.db.types.find())
 
 
-# function to generate new checklist to home page
+# function to generate new checklist to checklist page
 @app.route("/insert_list", methods=["POST"])
 def insert_list():
     checklist = mongo.db.checklist
