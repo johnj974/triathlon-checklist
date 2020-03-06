@@ -16,11 +16,11 @@
                         {% endfor %}
                         </select>
 					<label for="name">Event Name</label>
-					<input class="form-control" type="text" id="name" name="name" maxlength="20" value="{{events.name}}">
+					<input class="form-control" type="text" id="name" name="name" maxlength="20" value="{{events.name}}" required>
 					<label for="location">County Location</label>
-					<input class="form-control" type="text" id="location" name="location" maxlength="15" value="{{events.location}}">
+					<input class="form-control" type="text" id="location" name="location" maxlength="15" value="{{events.location}}" required>
 					<label for="date">Date</label>
-					<input type="date" id="date" name="date" class="form-control" value="{{events.date}}">
+					<input type="date" id="date" name="date" class="form-control" value="{{events.date}}" required>
 					<label for="swim_time">Swim Time</label>
 					<input class="form-control" type="number" id="swim_time" name="swim_time" value="{{events.swim_time}}">
 					<label for="cycle_time">Cycle Time</label>
