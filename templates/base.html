@@ -22,31 +22,31 @@
             </button>
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
+					<li class="nav-item">
 						<a class="nav-link" href="{{url_for('equipment_list')}}">Equipment Suggestions</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{url_for('add_list')}}">Create CheckList
 							<span class="sr-only">(current)</span></a>
 					</li>
-                    <li class="nav-item">
+					<li class="nav-item">
 						<a class="nav-link" href="{{url_for('record_event')}}">Create Event</a>
 					</li>
-                    <li class="nav-item">
+					<li class="nav-item">
 						<a class="nav-link" href="{{url_for('checklist')}}">Checklist</a>
 					</li>
-                    <li class="nav-item">
+					<li class="nav-item">
 						<a class="nav-link" href="{{url_for('event_list')}}">Events</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{url_for('blog_list')}}">Notes</a>
 					</li>
-					
+
 				</ul>
 			</div>
 		</nav>
 	</header>
-    <hr>
+	<hr>
 	{% block content %}
 	{% endblock %}
 	<div class="container-fluid footer">
