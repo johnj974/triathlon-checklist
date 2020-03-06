@@ -129,6 +129,19 @@ ul li i:hover{
     width :90%;
     margin: auto;
 }
+
+#landing{
+    height: 100vh;
+    background-image:url("/static/css/images/main.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 90%;
+}
+
+
+
+
                                                 /*-------------text decoration--------------*/
 h4{
     text-align: center;
@@ -157,6 +170,16 @@ label{
 
 strong{
     color: orangered;
+}
+
+h2{
+    color: orangered;
+}
+
+@media only screen and (max-width: 600px) {
+   h2{
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 600px) {
