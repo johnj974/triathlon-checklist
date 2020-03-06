@@ -152,6 +152,13 @@ The projects repository can be viewed <a href="https://github.com/johnj974/triat
   <li>18. The most up to date version of the app is then hosted on Heroku</li>
     </ul>
     </p>
+    <p>To view the app after initial setup in Heroku</p>
+    <ul>
+    <li>Login to heroku</li>
+    <li>Choose app name.</li>
+    <li>Choose Deploy header in dashboard.</li>
+    <li>Go to bottom of page and click on deploy branch</li>
+    </ul>
     <h2>Data Schema</h2>
     <p>All the data that can be seen on the website is stored in a mongodb database, the data is stored in a database folder
     called triathlon-checklist. this data is then stored in three sub collections called blog, checklist and events, the blog collection
